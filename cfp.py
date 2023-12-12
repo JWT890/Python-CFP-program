@@ -21,11 +21,15 @@ def determine_playoff(teams):
     return teams[:4]
 
 def determine_head_to_head_winner(team1, team2):
+    # If two teams have the same strength of schedule, it will then ask for a head to head matchup to determine rankings
     result = input(f"Enter head-to-head result between {team1.name} and {team2.name}: (W/L/D)").upper()
+    # If the input is W, return team1 or team2 that won the matchup
     if result == "W":
+    # If the input is L, return team2 or team1 that lost the matchup
         return team1
     elif result == "L":
         return team2
+    # If the input is D, return neither team
     else:
         return None
 
